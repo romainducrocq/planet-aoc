@@ -36,7 +36,12 @@ function run_day () {
     BANNER="----- Day ${DAY} -----"
     DAY="day${DAY}"
     SOURCE_FILE="${YEAR}/${DAY}.plx"
-    if [ ! -f "${SOURCE_FILE}" ]; then exit 0; fi
+    if [ ! -f "${SOURCE_FILE}" ]; then return 0; fi
+
+    INPUT_FILE="${YEAR}/${DAY}.txt"
+    if [ -f "inputs/aoc-inputs/${INPUT_FILE}" ]; then
+        cp inputs/aoc-inputs/${INPUT_FILE} inputs/${YEAR}/
+    fi
 
     echo ""
     echo "${BANNER}"
