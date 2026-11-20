@@ -1,4 +1,4 @@
-import "libinput"
+import "libaoc"
 use "stdlib"
 
 type struc redtile_t(x: i64, y: i64)

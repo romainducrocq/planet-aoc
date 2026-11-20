@@ -16,7 +16,7 @@ function run_day () {
     DAY="day${DAY}"
 
     planet -O3 -E ${DEF_CHECK} ${LINK_LIB} -o build/${DAY} \
-        ${DAY}.plx main.plx libcom/libfile.plx
+        ${DAY}.plx main.plx libaoc.plx
     if [ ${?} -ne 0 ]; then exit 1; fi
     ./build/${DAY}
     if [ ${?} -ne 0 ]; then exit 1; fi

@@ -1,12 +1,7 @@
-import "libinput"
+import "libaoc"
 use "stdio"
 use "stdlib"
 use "string"
-
-extrn fn part_1(none) i64;
-extrn fn part_2(none) i64;
-
-pub input: struc FileText = $(nil)
 
 answers: [12][2]i64 = $(
 m4_ifdef(`CHECK_ANSWER', `

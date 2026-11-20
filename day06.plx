@@ -1,4 +1,4 @@
-import "libinput"
+import "libaoc"
 
 pub fn part_1(none) i64 {
     sum: i64 = 0

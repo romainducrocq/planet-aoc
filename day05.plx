@@ -1,4 +1,4 @@
-import "libinput"
+import "libaoc"
 use "stdlib"
 
 pub fn part_1(none) i64 {

@@ -1,4 +1,4 @@
-import "libinput"
+import "libaoc"
 use "ctype"
 use "stdio"
 use "string"

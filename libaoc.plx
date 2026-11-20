@@ -1,7 +1,9 @@
-import "libfile"
+import "libaoc"
 use "ctype"
 use "stdio"
 use "stdlib"
+
+pub input: struc FileText = $(nil)
 
 pub fn ftext_close(filetext: *struc FileText) none {
     filetext[].lines = 0
