@@ -1,0 +1,4 @@
+[submodule "inputs/aoc-inputs"]
+    path = inputs/aoc-inputs
+    url = https://github.com/romainducrocq/aoc-inputs
+    branch = master
