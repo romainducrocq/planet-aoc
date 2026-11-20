@@ -41,11 +41,11 @@ pub fn main(_: i32, args: *string) i32 {
     num: *char = @args[0][strlen(args[0]) - 2]
     day: i32 = strtol(num, nil, 10) - 1
     filename: [32]char = $(nil)
-    snprint(filename, 16, fmt3("input/day", num, ".txt"))
+    snprint(filename, 22, fmt3("inputs/2025/day", num, ".txt"))
 
     if (ftext_read(filename, @input)) {
         fprint(get_stderr(), fmt3("Cannot open file ", filename, "\n"))
-        abort()
+        exit(1)
     }
     check_answer(part_1(), answers[day][0])
     check_answer(part_2(), answers[day][1])
