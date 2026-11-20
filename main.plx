@@ -4,9 +4,10 @@ use "stdlib"
 use "string"
 
 m4_define(`YEAR_2025', `0')m4_dnl
-answers: [1][24][2]i64 = $(
+m4_define(`YEAR_2026', `1')m4_dnl
+answers: [2][24][2]i64 = $(
 m4_ifdef(`CHECK_ANSWER', `
-    $(  # year 2025
+    $( # year 2025
         $(1147, 6789),                    # day 1
         $(8576933996, 25663320831),       # day 2
         $(17301, 172162399742349),        # day 3
@@ -19,6 +20,9 @@ m4_ifdef(`CHECK_ANSWER', `
         $(514, 21824),                    # day 10
         $(688, 293263494406608),          # day 11
         $(457, 0)                         # day 12
+    ),
+    $( # year 2026
+        $(nil)
     )
 ', `
     $(nil)
@@ -28,6 +32,7 @@ m4_ifdef(`CHECK_ANSWER', `
 fn aoc_year(year: i32) i32 {
     match year {
         -> 2025 { return YEAR_2025 }
+        -> 2026 { return YEAR_2026 }
     }
     return 0
 }
