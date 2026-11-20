@@ -16,19 +16,23 @@ $ ./install.sh
 $ . ~/.bashrc # or . ~/.zshrc or . ~/.shrc
 ```
 
-### Run AOC 2025
+### Run AOC solutions
 
-1. Add your inputs with `input/day00.txt`, from `01` to `12`.
-2. Build and run
-- the solution for a specific day:  
+1. Add your inputs with `inputs/YYYY/dayDD.txt` from `01` to `12` (for example, `inputs/2025/day08.txt`). I'm keeping my own inputs private in a submodule, [as requested by Eric](https://adventofcode.com/2026/about#faq_copying).  
+> Can I copy/redistribute part of Advent of Code? Please don't. Advent of Code is free to use, not free to copy. If you're posting a code repository somewhere, please don't include parts of Advent of Code like the puzzle text or your inputs.
+
+2. Build and run solutions with `./build_and_run.sh [--check] 2025 [1..12]`
+- for a specific day:  
 ```
-./build_and_run.sh --no-check [1-12]
+# with inputs/2025/day08.txt
+./build_and_run.sh 2025 8
 ```
-- or all solutions for AOC 2025:  
+- or all puzzles for that year:  
 ```
-./build_and_run.sh --no-check
+# with inputs/2025/day*.txt
+./build_and_run.sh 2025
 ```
-(Running without `--no-check` tests against my own answers.)  
+(The `--check` flag tests against my answers, see `main.plx` to replace them with yours.)  
 
 ****
 
