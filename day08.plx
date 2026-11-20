@@ -7,9 +7,9 @@ type struc box_t(x: i64, y: i64, z: i64, circuit: i32)
 dists: [499500]struc dist_t;
 boxes: [1000]struc box_t;
 
-m4_define(COMPARE_NONE, 1)m4_dnl
-m4_define(COMPARE_INT, 2)m4_dnl
-m4_define(COMPARE_DIST, 3)m4_dnl
+m4_define(`COMPARE_NONE', `1')m4_dnl
+m4_define(`COMPARE_INT', `2')m4_dnl
+m4_define(`COMPARE_DIST', `3')m4_dnl
 compare_def: i32 = COMPARE_NONE
 pub fn qsort_compare(a: *any, b: *any) i32 {
     match compare_def {
