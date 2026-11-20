@@ -10,8 +10,9 @@ areas: [499500]struc area_t;
 pub fn qsort_compare(a: *any, b: *any) i32 {
     a_area: *struc area_t = cast<*struc area_t>(a)
     b_area: *struc area_t = cast<*struc area_t>(b)
-    return ? b_area[].area < a_area[].area then -1 else (
-        ? b_area[].area > a_area[].area then 1 else 0)
+    return (? b_area[].area < a_area[].area then -1
+        else ? b_area[].area > a_area[].area then 1
+            else 0)
 }
 
 pub fn part_1(none) i64 {

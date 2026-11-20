@@ -43,8 +43,8 @@ fn check_answer(part: i64, answer: i64) none {
 }
 
 pub fn main(_: i32, args: *string) i32 {
-    num: *char = @args[0][strlen(args[0])-2]
-    day: i32 = strtol(num, nil, 10)-1
+    num: *char = @args[0][strlen(args[0]) - 2]
+    day: i32 = strtol(num, nil, 10) - 1
     filename: [32]char = $(nil)
     snprint(filename, 16, fmt3("input/day", num, ".txt"))
 

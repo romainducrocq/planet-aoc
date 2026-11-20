@@ -24,12 +24,12 @@ pub fn part_1(none) i64 {
         n2: i64 = parse_num(@str)
         if len1 % 2 == 0 or len2 % 2 == 0 {
             len: i32 = ? len1 % 2 == 0 then len1 else len2
-            factor: i64 = ? (len == 2
-                ) then 10 else ? (len == 4
-                ) then 100 else ? (len == 6
-                ) then 1000 else ? (len == 8
-                ) then 10000 else ? (len == 10
-                ) then 100000 else 0
+            factor: i64 = (? len == 2 then 10
+                else ? len == 4 then 100
+                    else ? len == 6 then 1000
+                        else ? len == 8 then 10000
+                            else ? len == 10 then 100000
+                                else 0)
             if len == 0 {
                 return 0
             }

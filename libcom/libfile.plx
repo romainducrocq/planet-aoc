@@ -57,9 +57,8 @@ pub fn ftext_read(filename: string, filetext: *struc FileText) i32 {
 }
 
 pub fn ftext_dd(i: i32, j: i32, filetext: *struc FileText) char {
-    return ? (
-        i >= 0 and i < filetext[].lines and j >= 0 and j < filetext[].width
-    ) then filetext[].text[i][j] else ' '
+    return (? i >= 0 and i < filetext[].lines and j >= 0 and j < filetext[].width
+        then filetext[].text[i][j] else ' ')
 }
 
 pub fn parse_num(str: *string) i64 {
