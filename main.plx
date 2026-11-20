@@ -3,10 +3,12 @@ use "stdio"
 use "stdlib"
 use "string"
 
-m4_define(`YEAR_2025', `0')m4_dnl
-m4_define(`YEAR_2026', `1')m4_dnl
-answers: [2][24][2]i64 = $(
+m4_define(`YEARS', `2026')m4_dnl
+answers: [m4_eval(YEARS` - 2014')][25][2]i64 = $(
 m4_ifdef(`CHECK_ANSWER', `
+    $( # year 2026
+        $(nil)
+    ),
     $( # year 2025
         $(1147, 6789),                    # day 1
         $(8576933996, 25663320831),       # day 2
@@ -20,22 +22,11 @@ m4_ifdef(`CHECK_ANSWER', `
         $(514, 21824),                    # day 10
         $(688, 293263494406608),          # day 11
         $(457, 0)                         # day 12
-    ),
-    $( # year 2026
-        $(nil)
     )
 ', `
-    $(nil)
+    $($(nil))
 ')
 )m4_dnl
-
-fn aoc_year(year: i32) i32 {
-    match year {
-        -> 2025 { return YEAR_2025 }
-        -> 2026 { return YEAR_2026 }
-    }
-    return 0
-}
 
 fn check_answer(part: i64, answer: i64) none {
     s: [32]char = $(nil)
@@ -65,7 +56,7 @@ pub fn main(_: i32, args: *string) i32 {
         exit(1)
     }
     day: i32 = strtol(@exec[8], nil, 10) - 1
-    year: i32 = aoc_year(strtol(exec, nil, 10))
+    year: i32 = YEARS - strtol(exec, nil, 10)
     check_answer(part_1(), answers[year][day][0])
     check_answer(part_2(), answers[year][day][1])
     ftext_close(@input)
